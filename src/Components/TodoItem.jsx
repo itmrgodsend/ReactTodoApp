@@ -1,7 +1,7 @@
 import React from 'react';
 import '../index.css'
 
-const TodoListItem = (props) => {
+const TodoItem = (props) => {
 
     const TodoElement = props.store.map((e) => {
         return <li key={e.toString()} className='TodoListItem'>{e.text}</li>
@@ -18,4 +18,4 @@ const TodoListItem = (props) => {
 
 
 
-export default TodoListItem;
+export default TodoItem;

@@ -1,12 +1,12 @@
 import React from "react";
-import AddTodo from "./Components/AddTodo";
+import Todo from "./Components/Todo";
 
 
 const App = (props) => {
 
     return (
     <div className='wrapper'>
-      <AddTodo store={props.store}/>
+      <Todo store={props.store}/>
 
     </div>
     )

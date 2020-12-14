@@ -1,21 +1,21 @@
 import React, {useState} from 'react';
-import TodoListItem from "./TodoListItem";
+import TodoItem from "./TodoItem";
 import Button from "@material-ui/core/Button";
 
 
-const AddTodo = (props) => {
+const Todo = (props) => {
     const [inputValue, setInputValue] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.store.push({text: inputValue, id: });
-        console.log(props.store)
+        props.store.push({text: inputValue});
+
         setInputValue(' ');
     }
     return (
         <div>
             <ul>
-                <TodoListItem store={props.store}/>
+                <TodoItem store={props.store}/>
             </ul>
             <div className='FormStyle'>
                 <form onSubmit={handleSubmit}>
@@ -30,4 +30,4 @@ const AddTodo = (props) => {
 };
 
 
-export default AddTodo;
+export default Todo;
