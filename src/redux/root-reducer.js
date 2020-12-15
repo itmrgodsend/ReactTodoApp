@@ -2,7 +2,7 @@ const ADD_TODO = 'ADD_TODO';
 
 let initialState = {
     todos: [
-        {id: 0, text: 'lol'}
+        {id: 1, text: 'lol'}
     ]
 }
 
