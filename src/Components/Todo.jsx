@@ -5,17 +5,16 @@ import Button from "@material-ui/core/Button";
 
 const Todo = (props) => {
     const [inputValue, setInputValue] = useState();
-
-    const handleSubmit = (e) => {
+    let handleSubmit = (e) => {
         e.preventDefault()
-        props.store.push({text: inputValue});
+        props.addTodo(inputValue);
 
         setInputValue(' ');
     }
     return (
         <div>
             <ul>
-                <TodoItem store={props.store}/>
+                <TodoItem state={props.state}/>
             </ul>
             <div className='FormStyle'>
                 <form onSubmit={handleSubmit}>

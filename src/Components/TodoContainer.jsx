@@ -1,25 +1,25 @@
 import React from 'react';
 import Todo from "./Todo";
 import {connect} from "react-redux";
+import {addTodoCreator} from "../redux/root-reducer";
+
 
 
 
 let mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage,
+        state
     }
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        sendMessageClick: () => {
-            dispatch(sendMessageCreator())
-        },
-        updateNewMessageBody: (body) => {
-            dispatch(updateNewMessageBodyCreator(body))
+        addTodo: (inputValue) => {
+            dispatch(addTodoCreator(inputValue))
         }
     }
 }
+
 
 const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Todo);
 

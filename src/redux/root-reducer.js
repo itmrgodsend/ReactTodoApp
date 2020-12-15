@@ -1,16 +1,20 @@
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET_USERS';
+const ADD_TODO = 'ADD_TODO';
 
 let initialState = {
-    users: [  ]
+    todos: [
+        {id: 0, text: 'lol'}
+    ]
 }
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
-        case FOLLOW:
+        case ADD_TODO:
             return {
                 ...state,
+                todos: [...state.todos, {
+                    id: state.todos.length + 1,
+                    text: action.inputValue
+                }]
 
             }
         default:
@@ -18,8 +22,6 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export const followAC = (userId) => ({type: FOLLOW, userId})
-export const unFollowAC = (userId) => ({type: UNFOLLOW, userId})
-export const setUsersAC = (users) => ({type: SET_USERS, users})
+export const addTodoCreator = (inputValue) => ({type: ADD_TODO, inputValue})
 
 export default rootReducer;

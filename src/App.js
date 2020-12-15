@@ -1,14 +1,12 @@
 import React from "react";
-import Todo from "./Components/Todo";
+import TodoContainer from "./Components/TodoContainer";
 
-
-const App = (props) => {
+const App = () => {
 
     return (
-    <div className='wrapper'>
-      <Todo store={props.store}/>
-
-    </div>
+        <div className='wrapper'>
+            <TodoContainer/>
+        </div>
     )
 }
 
