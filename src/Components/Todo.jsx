@@ -5,7 +5,7 @@ import store from "../redux/redux-store";
 
 
 const Todo = (props) => {
-    const [inputValue, setInputValue] = useState();
+    const [inputValue, setInputValue] = useState('');
     let handleSubmit = (e) => {
         e.preventDefault()
         props.addTodo(inputValue);
