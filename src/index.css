@@ -11,22 +11,10 @@
     width: 300px;
 }
 
-.TodoListItem {
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    border: 1px solid #bfbfbf;
-    border-radius: 3px;
-    padding: 8px;
-    width: 150%;
-    list-style-type: none;
-
+.rm {
+    background: red;
+    border-radius: 70%;
+    color: aliceblue;
+    border: none;
 }
 
-.FormStyle {
-    margin-top: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
-
-}
