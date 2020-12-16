@@ -4,7 +4,7 @@ import '../index.css'
 const TodoItem = (props) => {
 
     const TodoElement = props.state.todos.map((e) => {
-        return <li key={e.id}  className='TodoListItem'>{e.text}</li>
+        return <li key={e.id}  className='TodoListItem'><strong>{e.id}&nbsp;&nbsp;&nbsp;</strong>{e.text}</li>
     })
 
     return (

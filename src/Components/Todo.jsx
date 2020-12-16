@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
 import TodoItem from "./TodoItem";
 import Button from "@material-ui/core/Button";
-import store from "../redux/redux-store";
-
+import PropTypes from 'prop-types'
 
 const Todo = (props) => {
+    console.log(props)
     const [inputValue, setInputValue] = useState('');
     let handleSubmit = (e) => {
         e.preventDefault()
-        props.addTodo(inputValue);
-        console.log(props.state)
-        setInputValue(' ');
+        if (inputValue !== '') {
+            props.addTodo(inputValue);
+            setInputValue(' ');
+            console.log(props.state)
+        }
     }
+
     return (
         <div>
             <ul>
@@ -26,8 +29,6 @@ const Todo = (props) => {
         </div>
 
     );
-
 };
-
 
 export default Todo;
