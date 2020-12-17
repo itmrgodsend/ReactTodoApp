@@ -1,6 +1,6 @@
 import TodoList from "./TodoList";
 import {connect} from "react-redux";
-import {addTodoCreator, changeFlagCreator} from "../redux/root-reducer";
+import {addTodoCreator, changeFlagCreator, removeTodoCreator} from "../redux/root-reducer";
 
 
 let mapStateToProps = (state) => {
@@ -16,6 +16,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         changeFlag: (id) => {
             dispatch(changeFlagCreator(id))
+        },
+        removeTodo: (id) => {
+            dispatch(removeTodoCreator(id))
         }
     }
 }

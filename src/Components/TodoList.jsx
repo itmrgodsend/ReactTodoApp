@@ -20,7 +20,7 @@ const TodoList = (props) => {
         <div>
             <ul>
                 {props.state.todos.map((todo) => {
-                    return <TodoItem todo={todo} key={todo.id} changeFlag={props.changeFlag}/>
+                    return <TodoItem todo={todo} key={todo.id} changeFlag={props.changeFlag} removeTodo={props.removeTodo}/>
                 })}
             </ul>
             {/*<div className='FormStyle'>

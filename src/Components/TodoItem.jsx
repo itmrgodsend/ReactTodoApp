@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Todo.module.css'
 
-const TodoItem = ({todo, changeFlag}) => {
+const TodoItem = ({todo, changeFlag, removeTodo}) => {
     /*const TodoElement = props.state.todos.map((e) => {
         return <li key={e.id}  className='TodoListItem'><strong>{e.id}&nbsp;&nbsp;&nbsp;</strong>{e.text}</li>
     })*/
@@ -17,7 +17,7 @@ if (todo.completed) {
                 <strong>{todo.id}</strong>
                 {todo.text}
             </span>
-            <button className='rm'>&times;</button>
+            <button className='rm' onClick={() => removeTodo(todo.id)}>&times;</button>
         </li>
 
     );

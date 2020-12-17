@@ -1,4 +1,5 @@
 const ADD_TODO = 'ADD_TODO';
+const REMOVE_TODO = 'REMOVE_TODO';
 const CHANGE_FLAG = 'CHANGE_FLAG';
 
 let initialState = {
@@ -20,6 +21,11 @@ const rootReducer = (state = initialState, action) => {
                     text: action.inputValue
                 }]
             }
+        case REMOVE_TODO:
+            return {
+                ...state,
+                todos: state.todos.filter(todo => todo.id !== action.id)
+            }
         case CHANGE_FLAG:
             return {
                 ...state,
@@ -39,6 +45,7 @@ const rootReducer = (state = initialState, action) => {
 }
 
 export const addTodoCreator = (inputValue) => ({type: ADD_TODO, inputValue})
+export const removeTodoCreator = (id) => ({type: REMOVE_TODO, id})
 export const changeFlagCreator = (id) => ({type: CHANGE_FLAG, id})
 
 export default rootReducer;
