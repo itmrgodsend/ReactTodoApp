@@ -27,7 +27,7 @@ const rootReducer = (state = initialState, action) => {
                     if(action.id === todo.id){
                         return {
                             ...todo,
-                            completed: true
+                            completed: !todo.completed
                         }
                     }
                     return todo
