@@ -18,6 +18,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 todos: [...state.todos, {
                     id: state.todos.length + 1,
+                    completed: false,
                     text: action.inputValue
                 }]
             }

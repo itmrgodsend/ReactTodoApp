@@ -13,7 +13,7 @@ if (todo.completed) {
     return (
         <li >
             <span className={classes.join(' ')}>
-                <input type='checkbox' onChange={() => changeFlag(todo.id)}/>
+                <input className={styles.todo_field} type='checkbox' onChange={() => changeFlag(todo.id)}/>
                 <strong>{todo.id}</strong>
                 {todo.text}
             </span>

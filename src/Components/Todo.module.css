@@ -8,6 +8,19 @@ li {
     margin-bottom: .5rem;
 }
 
-input {
+.todo_field {
     margin-right: 1rem;
+}
+
+
+.add_todo {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.add_button {
+    color: red !important;
 }

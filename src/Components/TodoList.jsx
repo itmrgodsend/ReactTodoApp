@@ -1,19 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TodoItem from "./TodoItem";
 import store from "../redux/redux-store";
 import AddTodo from "./AddTodo";
+import styles from './Todo.module.css'
 
 
 const TodoList = (props) => {
     console.log(store.getState())
-    /* let handleSubmit = (e) => {
-         e.preventDefault()
-         if (inputValue !== '') {
-             props.addTodo(inputValue);
-             setInputValue(' ');
-             console.log(props.state)
-         }
-     }*/
 
     return (
         <div>
@@ -26,7 +19,9 @@ const TodoList = (props) => {
                     />
                 })}
             </ul>
+            <div className={styles.add_todo}>
             <AddTodo addTodoItem={props.addTodoItem}/>
+            </div>
         </div>
 
     );

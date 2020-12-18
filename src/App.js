@@ -7,7 +7,7 @@ const App = (props) => {
 
     return (
         <div className='wrapper'>
-
+        <h2 className='title'>Personal Todo</h2>
             {props.state.todos.length ? <TodoContainer/> : <p>No todos</p>}
 
         </div>
