@@ -4,9 +4,7 @@ const CHANGE_FLAG = 'CHANGE_FLAG';
 
 let initialState = {
     todos: [
-        {id: 1, completed: false, text: 'text'},
-        {id: 2, completed: false, text: 'text2'},
-        {id: 3, completed: false, text: 'text3'}
+        {id: 1, completed: false, text: 'Начать использовать список дел'},
     ]
 }
 
@@ -31,7 +29,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 todos: state.todos.map((todo) => {
-                    if(action.id === todo.id){
+                    if (action.id === todo.id) {
                         return {
                             ...todo,
                             completed: !todo.completed

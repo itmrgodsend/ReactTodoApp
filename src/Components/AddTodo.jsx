@@ -3,7 +3,9 @@ import {Button, Input, TextField} from "@material-ui/core";
 import styles from './Todo.module.css'
 
 const AddTodo = (props) => {
+
     const [inputValue, setInputValue] = useState('');
+
     let submit = (e) => {
         e.preventDefault();
         if (inputValue !== '') {
@@ -14,8 +16,11 @@ const AddTodo = (props) => {
     }
     return (
         <form onSubmit={submit}>
-            <TextField size="small" label="Todo" variant="outlined" maxLength="32" value={inputValue} onChange={e => setInputValue(e.target.value)}/>
-            <Button className={styles.add_button} variant="contained"  type='submit'>Add</Button>
+            <TextField inputProps={{maxLength: 24}}
+
+                       size="small" label="Enter Todo" variant="outlined" maxLength="32" value={inputValue}
+                       onChange={e => setInputValue(e.target.value)}/>
+            <Button className={styles.add_button} variant="contained" type='submit'>Add</Button>
         </form>
     );
 };

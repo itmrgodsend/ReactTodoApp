@@ -1,23 +1,24 @@
 import React from 'react';
 import styles from './Todo.module.css'
+import CancelIcon from '@material-ui/icons/Cancel';
+import {IconButton} from "@material-ui/core";
 
 const TodoItem = ({todo, changeFlag, removeTodoItem}) => {
-    /*const TodoElement = props.state.todos.map((e) => {
-        return <li key={e.id}  className='TodoListItem'><strong>{e.id}&nbsp;&nbsp;&nbsp;</strong>{e.text}</li>
-    })*/
-const classes = [];
 
-if (todo.completed) {
-    classes.push('done');
-}
+    const classes = [];
+
+    if (todo.completed) {
+        classes.push('done');
+    }
     return (
-        <li >
+        <li className={styles.todo_li}>
             <span className={classes.join(' ')}>
                 <input className={styles.todo_field} type='checkbox' onChange={() => changeFlag(todo.id)}/>
-                <strong>{todo.id}</strong>
+                <strong className={styles.todo_id}>{todo.id}</strong>
                 {todo.text}
             </span>
-            <button className='rm' onClick={() => removeTodoItem(todo.id)}>&times;</button>
+            <IconButton  onClick={() => removeTodoItem(todo.id)}><CancelIcon fontSize="small" /></IconButton>
+
         </li>
 
     );
