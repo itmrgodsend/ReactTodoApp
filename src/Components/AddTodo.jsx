@@ -4,7 +4,10 @@ const AddTodo = (props) => {
     const [inputValue, setInputValue] = useState('');
     let submit = (e) => {
         e.preventDefault();
-        props.addTodoItem(inputValue);
+        if (inputValue !== '') {
+            props.addTodoItem(inputValue);
+            setInputValue(' ');
+        }
 
     }
     return (
