@@ -11,14 +11,14 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        addTodo: (inputValue) => {
-            dispatch(addTodoCreator(inputValue))
-        },
         changeFlag: (id) => {
             dispatch(changeFlagCreator(id))
         },
-        removeTodo: (id) => {
+        removeTodoItem: (id) => {
             dispatch(removeTodoCreator(id))
+        },
+        addTodoItem: (inputValue) => {
+            dispatch(addTodoCreator(inputValue))
         }
     }
 }
