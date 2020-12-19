@@ -1,28 +1,47 @@
 import React from "react";
-import TodoContainer from "./Components/TodoContainer";
 import {connect} from "react-redux";
-import AddTodo from "./Components/AddTodo";
+import TodoList from "./Components/TodoList";
+import {addTodoCreator, changeFlagCreator, removeTodoCreator} from "./redux/root-reducer";
 import styles from "./Components/Todo.module.css";
+import AddTodo from "./Components/AddTodo";
 
 
 const App = (props) => {
-console.log(props)
     return (
         <div className='wrapper'>
             <h2 className='title'>Personal Todo</h2>
-            {/*{props.state.todos.length ? <TodoContainer/> : <p className='empty'>No todos</p>}*/}
-            <TodoContainer/>
+            {props.state.todos.length ? <TodoList state={props.state}
+                                                  changeFlag={props.changeFlag}
+                                                  removeTodoItem={props.removeTodoItem}
+            /> : <p className='empty'>No todos</p>}
+            <div className={styles.add_todo}>
+                <AddTodo addTodoItem={props.addTodoItem}/>
+            </div>
         </div>
     )
 }
 
-function mapStateToProps(state) {
-
-    return {state}
-
+let mapStateToProps = (state) => {
+    return {
+        state
+    }
 }
 
-export default connect(mapStateToProps)(App);
+let mapDispatchToProps = (dispatch) => {
+    return {
+        changeFlag: (id) => {
+            dispatch(changeFlagCreator(id))
+        },
+        removeTodoItem: (id) => {
+            dispatch(removeTodoCreator(id))
+        },
+        addTodoItem: (inputValue) => {
+            dispatch(addTodoCreator(inputValue))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
 

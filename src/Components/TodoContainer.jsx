@@ -1,3 +1,4 @@
+/*
 import TodoList from "./TodoList";
 import {connect} from "react-redux";
 import {addTodoCreator, changeFlagCreator, removeTodoCreator} from "../redux/root-reducer";
@@ -24,6 +25,6 @@ let mapDispatchToProps = (dispatch) => {
 }
 
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList);
+const TodoContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList);
 
-export default DialogsContainer;
+export default TodoContainer;*/

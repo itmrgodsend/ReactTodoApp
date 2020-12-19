@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Input, TextField} from "@material-ui/core";
+import {Button, TextField} from "@material-ui/core";
 import styles from './Todo.module.css'
 
 const AddTodo = (props) => {

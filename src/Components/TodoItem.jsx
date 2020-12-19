@@ -17,8 +17,7 @@ const TodoItem = ({todo, changeFlag, removeTodoItem}) => {
                 <strong className={styles.todo_id}>{todo.id}</strong>
                 {todo.text}
             </span>
-            <IconButton  onClick={() => removeTodoItem(todo.id)}><CancelIcon fontSize="small" /></IconButton>
-
+            <IconButton onClick={() => removeTodoItem(todo.id)}><CancelIcon fontSize="small"/></IconButton>
         </li>
 
     );
